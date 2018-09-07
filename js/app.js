@@ -33,7 +33,7 @@ const handleFormSubmit = function(e) {
   addTextAndAppend(task, 'task')
   // append the newTask to the task list ul element
   const taskList = selector('#task-list');
-  taskList.appendChild(newTask);
+  taskList.insertBefore(newTask, taskList.firstChild);
   // reset form after submission
   this.reset();
 };
