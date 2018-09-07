@@ -1,3 +1,7 @@
+:root {
+	--shadow: 0 2px 5px rgba(30, 30, 30, 0.5)
+}
+
 body {
   font-family: sans-serif;
   background-color: lightgreen;
@@ -26,8 +30,7 @@ label {
   margin: 10px;
   line-height: 15px;
   color: black;
-  border: 1px solid black;
-  border-radius: 5%;
+  box-shadow: var(--shadow);
 }
 
 .high {
