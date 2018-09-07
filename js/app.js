@@ -22,15 +22,15 @@ const handleFormSubmit = function(e) {
   // add html classes to newTask
   newTask.classList.add('flex-item');
   newTask.classList.add(this.priority.value);
-  // create h2 element, set text content and append to newTask
-  const task = creator('h2');
-  addTextAndAppend(task, 'task')
-  // create h4 element, set text content and append to newTask
-  const taskDueDate = creator('h4');
-  addTextAndAppend(taskDueDate, 'dueDate')
-  // create p element, set text content and append to newTask
-  const taskCategory = creator('p');
+  // create category element, set text content and append to newTask
+  const taskCategory = creator('h2');
   addTextAndAppend(taskCategory, 'category')
+  // create dueDate element, set text content and append to newTask
+  const taskDueDate = creator('h5');
+  addTextAndAppend(taskDueDate, 'dueDate')
+  // create task (details) element, set text content and append to newTask
+  const task = creator('p');
+  addTextAndAppend(task, 'task')
   // append the newTask to the task list ul element
   const taskList = selector('#task-list');
   taskList.appendChild(newTask);

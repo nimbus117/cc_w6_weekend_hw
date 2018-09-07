@@ -26,7 +26,8 @@ label {
 .flex-item {
   padding: 10px;
   width: auto;
-  height: 150px;
+  min-width: 200px;
+  min-height: 150px;
   margin: 10px;
   line-height: 15px;
   color: black;
