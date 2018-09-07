@@ -7,13 +7,24 @@ body {
   background-color: lightgreen;
 }
 
-label {
-  display: block;
-  margin: 10px 0;
+h1 {
+  text-align: center;
+}
+
+#form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-item {
+  margin: 10px;
 }
 
 #buttons {
-  margin-top: 15px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
 }
 
 .flex-container {
@@ -21,6 +32,7 @@ label {
   margin: 0;
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .flex-item {
@@ -32,6 +44,7 @@ label {
   line-height: 15px;
   color: black;
   box-shadow: var(--shadow);
+  flex: 1 1 200px;
 }
 
 .high {
