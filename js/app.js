@@ -12,20 +12,22 @@ const handleFormSubmit = function(e) {
   e.preventDefault();
   // console.log('test form submit');
 
-  const newTask =creator('li');
+  const addTextAndAppend = (element, input) => {
+    element.textContent = this[input].value;
+    newTask.appendChild(element);
+  }
+
+  const newTask = creator('li');
   newTask.classList.add('flex-item');
 
   const task = creator('h2');
-  task.textContent = this.task.value;
-  newTask.appendChild(task);
+  addTextAndAppend(task, 'task')
 
   const taskDueDate = creator('h4');
-  taskDueDate.textContent = this.dueDate.value;
-  newTask.appendChild(taskDueDate);
+  addTextAndAppend(taskDueDate, 'dueDate')
 
   const taskCategory = creator('p');
-  taskCategory.textContent = this.category.value;
-  newTask.appendChild(taskCategory);
+  addTextAndAppend(taskCategory, 'category')
 
   const taskList = selector('#task-list');
   taskList.appendChild(newTask);
