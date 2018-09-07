@@ -20,7 +20,6 @@ label {
 }
 
 .flex-item {
-  background: lightblue;
   padding: 10px;
   width: auto;
   height: 150px;
@@ -29,4 +28,16 @@ label {
   color: black;
   border: 1px solid black;
   border-radius: 5%;
+}
+
+.high {
+  background-color: red;
+}
+
+.medium {
+  background-color: yellow;
+}
+
+.low {
+  background-color: lightblue;
 }
