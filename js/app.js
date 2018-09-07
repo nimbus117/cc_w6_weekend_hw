@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const form = document.querySelector('#new-item-form');
   form.addEventListener('submit', handleFormSubmit);
+
+  const deleteButton = document.querySelector('#deleteButton');
+  deleteButton.addEventListener('click', handleDeleteButton);
 })
 
 const handleFormSubmit = function(e) {
@@ -31,4 +34,11 @@ const handleFormSubmit = function(e) {
   newTask.classList.add(priority);
 
   this.reset();
+};
+
+const handleDeleteButton = function (){
+  const taskList = document.querySelector('#task-list');
+  while (taskList.firstChild) {
+    taskList.removeChild(taskList.firstChild);
+  };
 };
