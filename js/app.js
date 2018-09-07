@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = selector('#new-item-form');
   form.addEventListener('submit', handleFormSubmit);
 
-  // add delete button event listener
+  // add delete button click event listener
   const deleteButton = selector('#deleteButton');
   deleteButton.addEventListener('click', handleDeleteButton);
 })
@@ -16,7 +16,7 @@ const handleFormSubmit = function (e) {
   // prevent default form behaviour
   e.preventDefault();
 
-  // helper function - create element, set text content and append to newTask
+  // helper function - create element, set text content and append to parent
   const createAndAppend = (elementType, content, parent) => {
     const element = creator(elementType);
     element.textContent = this[content].value;
@@ -25,6 +25,7 @@ const handleFormSubmit = function (e) {
 
   // create li element 'newTask'
   const newTask = creator('li');
+
   // add html classes to newTask
   newTask.classList.add('flex-item');
   newTask.classList.add(this.priority.value);
