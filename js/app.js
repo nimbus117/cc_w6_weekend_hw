@@ -16,19 +16,11 @@ const handleFormSubmit = function (e) {
   // prevent default form behaviour
   e.preventDefault();
 
-  // helper function - create element, set text content and append to parent
-  const createAndAppend = (elementType, content, parent) => {
-    const element = creator(elementType);
-    element.textContent = this[content].value;
-    parent.appendChild(element);
-  }
-
   // create li element 'newTask'
   const newTask = creator('li');
 
   // add html classes to newTask
-  newTask.classList.add('flex-item');
-  newTask.classList.add(this.priority.value);
+  newTask.classList.add('flex-item', this.priority.value);
 
   // create category element, set text content and append to newTask
   createAndAppend('h2', 'category', newTask);
@@ -53,7 +45,15 @@ const handleDeleteButton = function () {
   };
 };
 
-// helper function to query for and select an element
+// helper functions
+// select an existing element
 const selector = element => document.querySelector(element);
-// helper function to create a new element
+// create a new element
 const creator = element => document.createElement(element);
+// create element, set text content and append to parent
+// --------- Why does this work here? Does it not retain definition context?
+const createAndAppend = (elementType, content, parent) => {
+  const element = creator(elementType);
+  element.textContent = this[content].value;
+  parent.appendChild(element);
+}
